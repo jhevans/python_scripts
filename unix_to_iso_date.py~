@@ -1,0 +1,13 @@
+import datetime
+import sys
+
+value = sys.argv[1]
+value = int(value)
+try:
+    d = datetime.datetime.fromtimestamp(value)
+except ValueError:
+    # May be in milliseconds if so correct
+    value /= 1000
+    d = datetime.datetime.fromtimestamp(value)
+
+print(d.isoformat())
