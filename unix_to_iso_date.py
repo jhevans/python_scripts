@@ -17,11 +17,11 @@ else:
     value = int(float(args.input_string))
     
     try:
-        d = datetime.datetime.fromtimestamp(value)
+        d = datetime.datetime.utcfromtimestamp(value)
         print (time.mktime(d.timetuple()))
     except ValueError:
         # May be in milliseconds if so correct
         value /= 1000
-        d = datetime.datetime.fromtimestamp(value)
+        d = datetime.datetime.utcfromtimestamp(value)
     
     print(d.isoformat())
