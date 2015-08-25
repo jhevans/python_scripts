@@ -1,3 +1,4 @@
+#! python
 # encoding=utf-8
 
 import argparse
@@ -19,9 +20,10 @@ n_shares = (total_investment / (option_price / 100))
 total_share_price_at_maturity = n_shares * (sale_price/100)
 total_profit = total_share_price_at_maturity - total_investment
 
-print u"For an investment of £{investment} per month".format(investment=monthly_investment)
+print u"For an investment of £{investment} per month for {months} months".format(investment=monthly_investment, months=months_to_maturity)
 print u"You would have invested £%f" % total_investment
-print u"Which would get you %f shares" % n_shares
 print u"At an option price of %fp" % option_price
-print u"Which would be worth £%f at maturity" % total_share_price_at_maturity
+print u"You would get %f shares" % n_shares
+print u"Which at a sale price of %fp" % sale_price
+print u"Would be worth £%f at maturity" % total_share_price_at_maturity
 print u"A profit of £%f" % total_profit
