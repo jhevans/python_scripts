@@ -21,9 +21,10 @@ total_share_price_at_maturity = n_shares * (sale_price/100)
 total_profit = total_share_price_at_maturity - total_investment
 
 print u"For an investment of £{investment} per month for {months} months".format(investment=monthly_investment, months=months_to_maturity)
-print u"You would have invested £%f" % total_investment
-print u"At an option price of %fp" % option_price
-print u"You would get %f shares" % n_shares
-print u"Which at a sale price of %fp" % sale_price
-print u"Would be worth £%f at maturity" % total_share_price_at_maturity
-print u"A profit of £%f" % total_profit
+print u"You would have invested £%0.2f" % total_investment
+print u"At an option price of %0.2fp" % option_price
+print u"You would get %0.2f shares" % n_shares
+print u"Which at a sale price of %0.2fp" % sale_price
+print u"Would be worth £%0.2f at maturity" % total_share_price_at_maturity
+print u"A profit of £%0.2f" % total_profit
+print u"Or a percentage gain of %0.2f%%" % (total_profit*100/total_investment)
